@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Carlos Arocha — Diseño basado en Sharper Signals (Arocha, 2025)">
+
+<title>🎯 Machine Learning interpretable</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="ML Interpretable_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ML Interpretable_files/libs/quarto-html/quarto.js"></script>
+<script src="ML Interpretable_files/libs/quarto-html/popper.min.js"></script>
+<script src="ML Interpretable_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ML Interpretable_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ML Interpretable_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ML Interpretable_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ML Interpretable_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ML Interpretable_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ML Interpretable_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul class="collapse">
+  <li><a href="#descripción-del-curso" id="toc-descripción-del-curso" class="nav-link active" data-scroll-target="#descripción-del-curso"><span class="header-section-number">1</span> Descripción del curso</a></li>
+  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link" data-scroll-target="#objetivos-de-aprendizaje"><span class="header-section-number">2</span> Objetivos de aprendizaje</a></li>
+  <li><a href="#logística" id="toc-logística" class="nav-link" data-scroll-target="#logística"><span class="header-section-number">3</span> Logística</a></li>
+  <li><a href="#calendario" id="toc-calendario" class="nav-link" data-scroll-target="#calendario"><span class="header-section-number">4</span> Calendario</a></li>
+  <li><a href="#criterios-de-evaluación" id="toc-criterios-de-evaluación" class="nav-link" data-scroll-target="#criterios-de-evaluación"><span class="header-section-number">5</span> Criterios de evaluación</a></li>
+  <li><a href="#software-y-librerías-especializadas" id="toc-software-y-librerías-especializadas" class="nav-link" data-scroll-target="#software-y-librerías-especializadas"><span class="header-section-number">6</span> Software y librerías especializadas</a></li>
+  <li><a href="#bibliografía" id="toc-bibliografía" class="nav-link" data-scroll-target="#bibliografía"><span class="header-section-number">7</span> Bibliografía</a></li>
+  <li><a href="#notas" id="toc-notas" class="nav-link" data-scroll-target="#notas"><span class="header-section-number">8</span> Notas</a></li>
+  <li><a href="#licencia" id="toc-licencia" class="nav-link" data-scroll-target="#licencia"><span class="header-section-number">9</span> Licencia</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="ML-Interpretable.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">🎯 Machine Learning interpretable</h1>
+<p class="subtitle lead">Aplicaciones en seguros</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Autor/a</div>
+  <div class="quarto-title-meta-heading">Afiliación</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Carlos Arocha — Diseño basado en <em>Sharper Signals</em> (Arocha, 2025) </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Licenciatura en Ciencia de Datos — Universidad Anáhuac
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 de octubre de 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="descripción-del-curso" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="descripción-del-curso"><span class="header-section-number">1</span> Descripción del curso</h2>
+<p>Este curso está orientado a poner en práctica temas de Machine Learning (ML) en el contexto de la consultoría actuarial. Los alumnos aplicarán técnicas de ML a problemas de seguros, conectando las señales implícitas en datos de seguros con técnicas modernas de análisis, así como con principios de equidad inherentes a los seguros y la habilidad de interpetar resultados.</p>
+<p>El curso integra la modelación algorítmica de datos y demuestra cómo los modelos lineales generalizados (GLMs, por sus siglas en inglés) pueden complementarse con Gradient Boosting Machines (GBM) y redes neuronales directas.</p>
+</section>
+<section id="objetivos-de-aprendizaje" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="objetivos-de-aprendizaje"><span class="header-section-number">2</span> Objetivos de aprendizaje</h2>
+<p>Al finalizar este cursos, los alumnos podrán:</p>
+<ol type="1">
+<li>Comprender el fundamento estadístico de la modelación de datos de seguros</li>
+<li>Construir, evaluar y comparar GLMs y GBMs</li>
+<li>Aplicar técnicas explicativas (SHAP, PDP, etc.)</li>
+<li>Integrar equidad, ética y transparencia para efectos de regulación o gobernanza</li>
+<li>Presentar soluciones de Machine Learning interpretables como proyecto integrado de consultoría actuarial</li>
+</ol>
+</section>
+<section id="logística" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="logística"><span class="header-section-number">3</span> Logística</h2>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Formato</td>
+<td style="text-align: left;">14 semanas - 2h de clase asíncrona (teoría) + 1h de clase síncrona (laboratorio)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Nivel</td>
+<td style="text-align: left;">A partir del 6º semestre</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prerrequisitos</td>
+<td style="text-align: left;">Probabilidad I y II, Estadística, programación en R y Python</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="calendario" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="calendario"><span class="header-section-number">4</span> Calendario</h2>
+<table class="table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Semana</th>
+<th style="text-align: left;">Temas</th>
+<th style="text-align: left;">Laboratorio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Introducción — análisis de datos de seguros</td>
+<td style="text-align: left;">Análisis exploratorio de datos</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">El ciclo de modelización estadística</td>
+<td style="text-align: left;">Validación cruzada y pérdida de generalización</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">GLM I: familia exponencial y modelos de Poisson</td>
+<td style="text-align: left;">Ajuste de un GLM de Poisson</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">GLM II: refinamiento y validación del modelo</td>
+<td style="text-align: left;">Análisis de residuales y curvas de lift</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Modelos Aditivos Generalizados (GAM): suavizamiento y no linealidad</td>
+<td style="text-align: left;">Ajuste de un GAM</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Fundamentos de ML sesgo-varianza y bootstrap</td>
+<td style="text-align: left;">Simulación bootstrap e importancia de variables</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Modelos basados en árboles: CART, bagging y random forests</td>
+<td style="text-align: left;">Entrenamiento de un random forest para frecuencia de siniestros</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">GBMs: algoritmo de Friedman</td>
+<td style="text-align: left;">Comparación de rendimiento entre GBM y GLM</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Inteligencia Artificial Explicable (XAI): PDP, ICE, SHAP</td>
+<td style="text-align: left;">Visualización e interpretación de valores SHAP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Deep Learning: modelos de redes neuronales</td>
+<td style="text-align: left;">Construcción de un modelo de redes neuronales</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">11</td>
+<td style="text-align: left;">Equidad y regulación: métricas de discriminación y ética en AI</td>
+<td style="text-align: left;">Evaluación de equidad grupal y análisis de impacto dispar</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Gestión del riesgo de modelos: validación, documentación y pruebas de estrés</td>
+<td style="text-align: left;">Elaboración de un informe de validación de modelo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">13</td>
+<td style="text-align: left;">Estudio de caso: proyecto “Sharper Signals”</td>
+<td style="text-align: left;">Presentaciones en equipo y revisión por pares</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">14</td>
+<td style="text-align: left;">Fronteras y tendencias futuras: inferencia causal, riesgo climático y equidad en IA</td>
+<td style="text-align: left;">Ensayo reflexivo y sesión de repaso</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="criterios-de-evaluación" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="criterios-de-evaluación"><span class="header-section-number">5</span> Criterios de evaluación</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Tareas</strong></td>
+<td style="text-align: left;">40%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Examen de medio término</strong></td>
+<td style="text-align: left;">10%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Participación</strong></td>
+<td style="text-align: left;">10%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Proyecto</strong></td>
+<td style="text-align: left;">30%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Examen final</strong></td>
+<td style="text-align: left;">10%</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="software-y-librerías-especializadas" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="software-y-librerías-especializadas"><span class="header-section-number">6</span> Software y librerías especializadas</h2>
+<ul>
+<li><strong>R:</strong> <code>glm()</code>, <code>mgcv</code>, <code>lightgbm</code>, <code>DALEX</code>, <code>shapviz</code>, <code>DHARMa</code>, <code>glmulti</code><br>
+</li>
+<li><strong>Python:</strong> <code>scikit-learn</code>, <code>xgboost</code>, <code>lightgbm</code>, <code>catboost</code>, <code>shap</code>, <code>plotly</code></li>
+</ul>
+</section>
+<section id="bibliografía" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="bibliografía"><span class="header-section-number">7</span> Bibliografía</h2>
+<ol type="1">
+<li>Goldburd, M., Khare, A., &amp; Tevet, D. (2025). <em>Generalized Linear Models for Insurance Rating</em> (CAS Monograph No.&nbsp;5).<br>
+</li>
+<li>Wüthrich, M. V., &amp; Buser, C. (2025). <em>Data Analytics for Non-Life Insurance Pricing – Lecture Notes.</em> ETH Zurich.<br>
+</li>
+<li>Wüthrich, M. V., &amp; Merz, M. (2023). <em>Statistical Foundations of Actuarial Learning and its Applications.</em> Springer Open Access.<br>
+</li>
+<li>Laub, P. J., Pho, T., &amp; Wong, B. (2025). <em>An Interpretable Deep Learning Model for General Insurance Pricing.</em> arXiv:2509.08467.<br>
+</li>
+<li>Friedman, J. H. (2001). “Greedy Function Approximation: A Gradient Boosting Machine.” <em>Annals of Statistics,</em> 29 (5).<br>
+</li>
+<li>Kuo, E., &amp; Lupton, D. (2024). <em>Towards Explainability of Machine Learning Models in Insurance Pricing.</em><br>
+</li>
+<li>Arocha, C. (2025). <em>Sharper Signals Presentation.</em> Zurich: Arocha &amp; Associates GmbH.</li>
+</ol>
+</section>
+<section id="notas" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="notas"><span class="header-section-number">8</span> Notas</h2>
+<p>Este curso enfatiza los conceptos de claridad, transparencia y reproducibilidad de los resultados en el contexto de la construcción de modelos.</p>
+<p>Se espera que los alumnos mantengan códigos de progranación documentados en su propio repositorio de Github y que documenten las hipótesis actuariales de sus modelos, de manera consistente con estándares actuariales de documentación de modelos.</p>
+</section>
+<section id="licencia" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="licencia"><span class="header-section-number">9</span> Licencia</h2>
+<p>Este diseño de curso se comparte bajo la licencia “Creative Commons Atributtion 4.0 Internacional (CC BY 4.0)”, que permite que este documento se pueda compartir e incluso adaptar, siempre y cuando se otorgue crédito al auto original.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

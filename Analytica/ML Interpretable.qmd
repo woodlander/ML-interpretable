@@ -1,0 +1,108 @@
+---
+title: "🎯 Machine Learning interpretable"
+subtitle: "Aplicaciones en seguros"
+author: "Carlos Arocha — Diseño basado en *Sharper Signals* (Arocha, 2025)"
+institute: "Licenciatura en Ciencia de Datos — Universidad Anáhuac"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "Contenido"
+    number-sections: true
+  pdf:
+    documentclass: article
+    geometry: margin=1in
+date: "10/27/2025"
+lang: es
+---
+
+## Descripción del curso 
+
+Este curso está orientado a poner en práctica temas de Machine Learning (ML) en el contexto de la consultoría actuarial. Los alumnos aplicarán técnicas de ML a problemas de seguros, conectando las señales implícitas en datos de seguros con técnicas modernas de análisis, así como con principios de equidad inherentes a los seguros y la habilidad de interpetar resultados.
+
+El curso integra la modelación algorítmica de datos y demuestra cómo los modelos lineales generalizados (GLMs, por sus siglas en inglés) pueden complementarse con Gradient Boosting Machines (GBM) y redes neuronales directas.
+
+
+
+## Objetivos de aprendizaje
+Al finalizar este cursos, los alumnos podrán:
+
+1. Comprender el fundamento estadístico de la modelación de datos de seguros
+2. Construir, evaluar y comparar GLMs y GBMs
+3. Aplicar técnicas explicativas (SHAP, PDP, etc.)
+4. Integrar equidad, ética y transparencia para efectos de regulación o gobernanza
+5. Presentar soluciones de Machine Learning interpretables como proyecto integrado de consultoría actuarial
+
+
+
+## Logística
+
+| Elemento | Descripción |
+|:--|:--|
+| Formato | 14 semanas - 2h de clase asíncrona (teoría) + 1h de clase síncrona (laboratorio) | 
+| Nivel | A partir del 6º semestre |
+| Prerrequisitos | Probabilidad I y II, Estadística, programación en R y Python |
+
+
+
+## Calendario
+
+| Semana | Temas | Laboratorio |
+|:--:|:--|:--|
+| 1 | Introducción — análisis de datos de seguros | Análisis exploratorio de datos |
+| 2 | El ciclo de modelización estadística | Validación cruzada y pérdida de generalización |
+| 3 | GLM I: familia exponencial y modelos de Poisson | Ajuste de un GLM de Poisson |
+| 4 | GLM II: refinamiento y validación del modelo | Análisis de residuales y curvas de lift |
+| 5 | Modelos Aditivos Generalizados (GAM): suavizamiento y no linealidad | Ajuste de un GAM |
+| 6 | Fundamentos de ML sesgo-varianza y bootstrap | Simulación bootstrap e importancia de variables |
+| 7 | Modelos basados en árboles: CART, bagging y random forests | Entrenamiento de un random forest para frecuencia de siniestros |
+| 8 | GBMs: algoritmo de Friedman | Comparación de rendimiento entre GBM y GLM |
+| 9 | Inteligencia Artificial Explicable (XAI): PDP, ICE, SHAP | Visualización e interpretación de valores SHAP |
+| 10 | Deep Learning: modelos de redes neuronales | Construcción de un modelo de redes neuronales |
+| 11 | Equidad y regulación: métricas de discriminación y ética en AI | Evaluación de equidad grupal y análisis de impacto dispar |
+| 12 | Gestión del riesgo de modelos: validación, documentación y pruebas de estrés | Elaboración de un informe de validación de modelo |
+| 13 | Estudio de caso: proyecto “Sharper Signals” | Presentaciones en equipo y revisión por pares |
+| 14 | Fronteras y tendencias futuras: inferencia causal, riesgo climático y equidad en IA | Ensayo reflexivo y sesión de repaso |
+
+
+## Criterios de evaluación
+
+| Componente| Peso |
+|:--|:--|
+| **Tareas** | 40% |
+| **Examen de medio término** | 10% |
+| **Participación** | 10% |
+| **Proyecto** | 30% |
+| **Examen final** | 10% |
+
+---
+
+## Software y librerías especializadas
+
+- **R:** `glm()`, `mgcv`, `lightgbm`, `DALEX`, `shapviz`, `DHARMa`, `glmulti`  
+- **Python:** `scikit-learn`, `xgboost`, `lightgbm`, `catboost`, `shap`, `plotly`  
+
+
+
+## Bibliografía
+
+1. Goldburd, M., Khare, A., & Tevet, D. (2025). *Generalized Linear Models for Insurance Rating* (CAS Monograph No. 5).  
+2. Wüthrich, M. V., & Buser, C. (2025). *Data Analytics for Non-Life Insurance Pricing – Lecture Notes.* ETH Zurich.  
+3. Wüthrich, M. V., & Merz, M. (2023). *Statistical Foundations of Actuarial Learning and its Applications.* Springer Open Access.  
+4. Laub, P. J., Pho, T., & Wong, B. (2025). *An Interpretable Deep Learning Model for General Insurance Pricing.* arXiv:2509.08467.  
+5. Friedman, J. H. (2001). “Greedy Function Approximation: A Gradient Boosting Machine.” *Annals of Statistics,* 29 (5).  
+6. Kuo, E., & Lupton, D. (2024). *Towards Explainability of Machine Learning Models in Insurance Pricing.*  
+7. Arocha, C. (2025). *Sharper Signals Presentation.* Zurich: Arocha & Associates GmbH.
+
+
+
+## Notas
+
+Este curso enfatiza los conceptos de claridad, transparencia y reproducibilidad de los resultados en el contexto de la construcción de modelos.
+
+Se espera que los alumnos mantengan códigos de progranación documentados en su propio repositorio de Github y que documenten las hipótesis actuariales de sus modelos, de manera consistente con estándares actuariales de documentación de modelos.
+
+
+## Licencia
+
+Este diseño de curso se comparte bajo la licencia "Creative Commons Atributtion 4.0 Internacional (CC BY 4.0)", que permite que este documento se pueda compartir e incluso adaptar, siempre y cuando se otorgue crédito al auto original.
